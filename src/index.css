@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+a {
+  color: #000;
+  font-size: 12px;
+  word-spacing: -0.5em !important;
+}
+
+a:hover {
+  color: #000;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace, sans-serif;
+  background: #F8C545;
+  color: #000;
+}
+
+div {
+  font-size: 12px;
+  word-spacing: -0.5em !important;
+}
+
+h3 {
+  font-size: 1.5em;
+  word-spacing: -0.5em !important;
+  margin-bottom: 25px;
+}
+
+hr {
+  background-color: #000;
+}
+
+p, span, li {
+  font-size: 14px;
+  word-spacing: -0.5em !important;
+}
+
+tr {
+  border-color: black;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:focus, .btn-primary:disabled {
+  font-size: 12px !important;
+  word-spacing: 0.15em !important;
+  color: #fff;
+  background: #DD1D0D;
+  border: 2px solid #DD1D0D;
+  border-radius: 0%;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  box-shadow: none;
+  color: #DD1D0D;
+  border: 2px solid #DD1D0D;
+}
+
+.btn-secondary, .btn-secondary:active, .btn-secondary:focus, .btn-secondary:disabled {
+  background: white;
+  border-color: black;
+  box-shadow: none;
+  color: black;
+  border: 2px solid black;
+}
+
+.btn-secondary:hover {
+  color: black;
+  border-color: #ffffff;
+  background: #ffffff;
+  border: 2px solid black;
+}
+
+.container {
+  background: transparent;
+  padding: 20px;
+  border-radius: 0;
+  border: 2px solid #000;
+}
+
+.domain-black-bg {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+}
+
+.form-control {
+  font-size: 10px;
+  word-spacing: -0.5em !important;
+  border-radius: 0;
+}
+
+.form-control-domain {
+  font-size: 14px;
+  word-spacing: -0.5em !important;
+}
+
+.input-group-lg > .form-control {
+  font-size: 12px;
+  word-spacing: -0.5em !important;
+}
+
+.img-thumbnail {
+  background-color: transparent;
+}
+
+.dropdown-item {
+  font-size: 12px;
+  word-spacing: -0.5em !important;
+}
+
+.modal-content {
+  color: black;
+}
+
+.navbar-toggler {
+  border: none;
+  color: #000;
+}
+
+.span-link:hover {
+  color: #1c1b1b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.span-link {
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.Vue-Toastification__toast--info {
+  background-color: #464555;
+}
+
+.Vue-Toastification__toast--info span {
+  word-spacing: 0.15em !important;
+}
+
+.Vue-Toastification__toast--success {
+  background-color: #00925D;
+}
+
+.Vue-Toastification__toast--success span {
+  word-spacing: 0.15em !important;
+}
+
+.Vue-Toastification__toast--error {
+  background-color: #DF2E00;
+}
+
+.Vue-Toastification__toast-body {
+  word-spacing: 0.15em !important;
+}
+
+@media only screen and (max-width: 767px) {
+  #sidebar-container {
+    margin-bottom: 15px;
+  }
+}
