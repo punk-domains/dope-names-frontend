@@ -53,7 +53,7 @@
     <button 
       v-if="isActivated && isNetworkSupported && !getMinterPaused && !getCanUserBuy && !getMinterLoadingData" 
       class="btn btn-primary btn-lg mt-3 buy-button" 
-      :disabled="waiting || buyNotValid(chosenDomainName).invalid || !hasUserEnoughTokens"
+      :disabled="waiting || buyNotValid(chosenDomainName).invalid || !hasUserEnoughTokens || !getCanUserBuy"
     >
       <span>You need to have a Hustler NFT</span>
     </button>

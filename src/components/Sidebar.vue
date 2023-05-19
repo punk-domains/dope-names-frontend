@@ -139,12 +139,11 @@ export default {
   content: "";
   display: block;
   padding-top: 100%;
-  border: 2px solid white;
   border-radius: 10px;
 }
 
 .custom-img-content {
-  position:  absolute;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -161,7 +160,6 @@ export default {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  color: white;
 }
 
 .flip-enter-active {
@@ -178,8 +176,8 @@ export default {
 }
 
 .img-thumbnail {
-  border-color: transparent;
-  border-radius: 15px;
+  border: 2px dashed #000 ;
+  border-radius: 0;
   cursor: pointer;
 }
 </style>
