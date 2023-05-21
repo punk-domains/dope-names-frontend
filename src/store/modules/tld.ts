@@ -15,7 +15,7 @@ export default {
     tldContract: null,
     tldChainId: 80001, // TODO
     tldChainName: "Polygon Testnet", // TODO
-    minterAddress: "0x4d2a69272066dA9047B44EB79145A59d8E48f288", // TODO
+    minterAddress: "0xfC3B9FEe5B367CCd7906B2ccEE6c5712Ab19d0c5", // TODO
     minterContract: null,
     minterLoadingData: false,
     minterPaused: true,

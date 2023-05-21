@@ -50,13 +50,14 @@
     </button>
 
     <!-- Not eligible -->
-    <button 
+    <a 
+      href="https://opensea.io/collection/hustlers" 
+      target="_blank" 
       v-if="isActivated && isNetworkSupported && !getMinterPaused && !getCanUserBuy && !getMinterLoadingData" 
       class="btn btn-primary btn-lg mt-3 buy-button" 
-      :disabled="waiting || buyNotValid(chosenDomainName).invalid || !hasUserEnoughTokens || !getCanUserBuy"
     >
       <span>You need to have a Hustler NFT</span>
-    </button>
+    </a>
 
     <!-- Too low ETH balance -->
     <button 
@@ -155,7 +156,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters("user", ["getPaymentTokenAddress", "getPaymentTokenName", "getPaymentTokenAllowance", "getUserBalance", "getCanUserBuy", "getDiscountEligible"]),
+    ...mapGetters("user", ["getHustlerNftId", "getPaymentTokenAddress", "getPaymentTokenName", "getPaymentTokenAllowance", "getUserBalance", "getCanUserBuy", "getDiscountEligible"]),
     ...mapGetters("network", ["getBlockExplorerBaseUrl"]),
     ...mapGetters("tld", ["getTldChainId", "getTldChainName", "getMinterAddress", "getTldContract", "getMinterLoadingData", "getMinterTldPrice1", "getMinterTldPrice2", "getMinterTldPrice3", "getMinterTldPrice4", "getMinterTldPrice5", "getMinterPaused", "getMinterDiscountPercentage", "getTldName"]),
 
@@ -232,6 +233,7 @@ export default {
           this.domainLowerCase,
           this.address,
           referral,
+          this.getHustlerNftId,
           {
             value: ethers.utils.parseEther(String(this.getPrice))
           }

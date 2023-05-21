@@ -11,6 +11,7 @@ export default {
   state: () => ({ 
     canUserBuy: false, // set to true, because anyone can mint a domain now (before only NFT holders were eligible)
     discountEligible: false,
+    hustlerNftId: -1, // -1 means no NFT (0 is a valid NFT id - Tarrence)
     isTldAdmin: false,
     isMinterAdmin: false,
     isRoyaltyFeeUpdater: false,
@@ -39,6 +40,9 @@ export default {
     },
     getDiscountEligible(state) {
       return state.discountEligible;
+    },
+    getHustlerNftId(state) {
+      return state.hustlerNftId;
     },
     getUserAddress(state) {
       return state.userAddress;
@@ -139,6 +143,10 @@ export default {
       if (!state.userAllDomainNames.includes(defName)) {
         state.userAllDomainNames.push(defName);
       }
+    },
+
+    setHustlerNftId(state, id) {
+      state.hustlerNftId = id;
     },
 
     setIsRoyaltyFeeUpdater(state, admin) {
@@ -289,6 +297,7 @@ export default {
     async fetchCanUserBuy({ commit, rootGetters }) {
       if (address.value) {
         // fetch if user can buy a domain
+        /*
         const minterIntfc = new ethers.utils.Interface([
           "function canUserMint(address _user) public view returns(bool)"
         ]);
@@ -298,6 +307,31 @@ export default {
 
         commit("setCanUserBuy", canMint);
         //commit("setCanUserBuy", false); // minting now open to everyone
+        */
+
+        // fetch user's ownership of the Hustler NFT from the DopeWars API
+        // Example: https://api.dopewars.gg/wallets/0xA2dE2d19edb4094c79FB1A285F3c30c77931Bf1e/hustlers
+
+        const userAddress = address.value;
+
+        const nftsArray = await fetch("https://api.dopewars.gg/wallets/" + userAddress + "/hustlers");
+        const nfts = await nftsArray.json();
+
+        console.log(nfts);
+
+        if (nfts.length > 0) {
+          console.log("User can mint with the Hustlers NFT #" + nfts[0].id);
+
+          // get the first item from array and extract the token ID
+          commit("setHustlerNftId", Number(nfts[0].id));
+
+          commit("setCanUserBuy", true);
+        } else {
+          console.log("User not eligible to mint.");
+          commit("setHustlerNftId", -1); // -1 means no NFT (0 is a valid NFT id - Tarrence)
+          commit("setCanUserBuy", false);
+        }
+
       }
     },
 
