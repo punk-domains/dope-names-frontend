@@ -314,22 +314,27 @@ export default {
 
         const userAddress = address.value;
 
-        const nftsArray = await fetch("https://api.dopewars.gg/wallets/" + userAddress + "/hustlers");
-        const nfts = await nftsArray.json();
+        try {
+          const nftsArray = await fetch("https://api.dopewars.gg/wallets/" + userAddress + "/hustlers");
+          const nfts = await nftsArray.json();
 
-        console.log(nfts);
+          console.log(nfts);
 
-        if (nfts.length > 0) {
-          console.log("User can mint with the Hustlers NFT #" + nfts[0].id);
+          if (nfts.length > 0) {
+            console.log("User can mint with the Hustlers NFT #" + nfts[0].id);
 
-          // get the first item from array and extract the token ID
-          commit("setHustlerNftId", Number(nfts[0].id));
+            // get the first item from array and extract the token ID
+            commit("setHustlerNftId", Number(nfts[0].id));
 
-          commit("setCanUserBuy", true);
-        } else {
-          console.log("User not eligible to mint.");
-          commit("setHustlerNftId", -1); // -1 means no NFT (0 is a valid NFT id - Tarrence)
-          commit("setCanUserBuy", false);
+            commit("setCanUserBuy", true);
+          } else {
+            console.log("User not eligible to mint.");
+            commit("setHustlerNftId", -1); // -1 means no NFT (0 is a valid NFT id - Tarrence)
+            commit("setCanUserBuy", false);
+          }
+        } catch (e) {
+          console.error("Cannot fetch from DopeWars API");
+          console.error(e);
         }
 
       }
