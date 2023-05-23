@@ -7,16 +7,16 @@ export default {
   namespaced: true,
   
   state: () => ({
-    networkCurrency: "MATIC", // TODO
+    networkCurrency: "ETH", // TODO
     networkName: "Unsupported Network",
     supportedNetworks: {
-      80001: "Polygon Testnet" // TODO
+      10: "Optimism" // TODO
     }
   }),
 
   getters: { 
     getBlockExplorerBaseUrl() {
-      return "https://mumbai.polygonscan.com"; // TODO
+      return "https://optimistic.etherscan.io/"; // TODO
     },
     
     getChainId() {
@@ -66,8 +66,8 @@ export default {
 
   mutations: { 
     setNetworkData(state) {
-      state.networkName = "Polygon Testnet"; // TODO
-      state.networkCurrency = "MATIC"; // TODO
+      state.networkName = "Optimism"; // TODO
+      state.networkCurrency = "ETH"; // TODO
     }
   },
 

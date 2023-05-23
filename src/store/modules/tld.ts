@@ -10,12 +10,12 @@ export default {
   
   state: () => ({ 
     discountPercentage: 0,
-    tldName: ".testdope",
-    tldAddress: "0x68a172F375Bf4525eeAC5257E7ED17A67b6A76DA", // TODO
+    tldName: ".dope",
+    tldAddress: "0x1d33989185AA79a3B9173bC7B1137E527C6A262b", // TODO
     tldContract: null,
-    tldChainId: 80001, // TODO
-    tldChainName: "Polygon Testnet", // TODO
-    minterAddress: "0xfC3B9FEe5B367CCd7906B2ccEE6c5712Ab19d0c5", // TODO
+    tldChainId: 10, // TODO
+    tldChainName: "Optimism", // TODO
+    minterAddress: "0x3C3f2c8C9c3B3199E9A1C3915754209218155050", // TODO
     minterContract: null,
     minterLoadingData: false,
     minterPaused: true,
