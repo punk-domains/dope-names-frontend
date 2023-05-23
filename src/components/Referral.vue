@@ -12,8 +12,8 @@
           <div class="col-md-6 offset-md-3">
             <input 
               class="form-control text-center clipboard"
-              :value="'https://dope-names.netlify.app/?ref=' + this.getNameOrAddress"
-              @click="copyToClipboard('https://dope-names.netlify.app/?ref=' + this.getNameOrAddress)"
+              :value="urlOrigin + '/?ref=' + getNameOrAddress"
+              @click="copyToClipboard(urlOrigin + '/?ref=' + getNameOrAddress)"
               readonly
             >
           </div>
@@ -29,6 +29,16 @@ import { useToast, TYPE } from "vue-toastification";
 
 export default {
   name: "Referral",
+
+  data() {
+    return {
+      urlOrigin: "",
+    }
+  },
+
+  mounted() {
+    this.urlOrigin = window.location.origin;
+  },
 
   computed: {
     ...mapGetters("user", ["getUserAddress", "getUserSelectedName"]),

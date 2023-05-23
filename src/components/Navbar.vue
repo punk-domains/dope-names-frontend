@@ -48,7 +48,7 @@
                 <router-link tag="li" class="dropdown-item" to="/">Buy domain</router-link>
                 <router-link tag="li" class="dropdown-item" to="/search-domain">Search domain</router-link>
                 <router-link tag="li" class="dropdown-item" to="/send-tokens">Send tokens</router-link>
-                <router-link tag="li" class="dropdown-item" to="/about">About</router-link>
+                <!-- <router-link tag="li" class="dropdown-item" to="/about">About</router-link> -->
                 <!-- <router-link tag="li" class="dropdown-item" to="/browser">Browser extension</router-link> -->
                 <li class="dropdown-item" @click="openUrl('https://dope-wars.notion.site/Dope-Wiki-e237166bd7e6457babc964d1724befb2')">Docs</li>
                 <li class="dropdown-item" @click="logout">Disconnect</li>
